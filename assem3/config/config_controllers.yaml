@@ -1,0 +1,32 @@
+# Robot name goes here
+assem3:
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Controller 1
+  BR_wheel_vel_controller:
+    type: effort_controllers/JointVelocityController
+    joint: BR_wheel_joint
+    pid :  {p: 10.0, i: 0.0, d: 5.0}
+  
+  # Controller 2
+  BL_wheel_vel_controller:
+    type: effort_controllers/JointVelocityController
+    joint: BL_wheel_joint
+    pid :  {p: 10.0, i: 0.0, d: 5.0}
+
+
+  # Controller 3
+  FR_steer_pos_controller:
+    type: position_controllers/JointPositionController
+    joint: FR_steer_joint
+    pid :  {p: 10.0, i: 0.0, d: 5.0}
+
+  # Controller 4
+  FL_steer_pos_controller:
+    type: position_controllers/JointPositionController
+    joint: FL_steer_joint
+    pid :  {p: 10.0, i: 0.0, d: 5.0}
+

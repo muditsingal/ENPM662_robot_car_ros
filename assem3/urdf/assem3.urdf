@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="assem3">
+  <link name="dummy_link">
+  <pose>"0 0 0 0 0 0"</pose>
+  </link>
+  <joint name="dummy_joint" type="fixed">
+    <parent link="dummy_link" />
+    <child link="base_link" />
+    <origin xyz = "0 0 0" rpy = "0 0 0" />
+    <axis xyz = "0 0 0" />
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0444736507285622 -1.11022302462516E-16 0.101520628093247"
+        rpy="0 0 0" />
+      <mass
+        value="31.3592902203089" />
+      <inertia
+        ixx="0.55001310970122"
+        ixy="3.98986399474666E-17"
+        ixz="0.00126069613122736"
+        iyy="2.37534066298956"
+        iyz="-2.05659599593344E-18"
+        izz="2.89476260275375" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rear_axle">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-16 -1.11022302462516E-16 -0.295909999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.188974185203894" />
+      <inertia
+        ixx="0.00541263612744179"
+        ixy="1.25116898354713E-21"
+        ixz="-8.04945997687602E-19"
+        iyy="0.00541263612744179"
+        iyz="-1.91426692204395E-20"
+        izz="9.74014393773757E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/rear_axle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/rear_axle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_axle_fixed_joint"
+    type="fixed">
+    <origin
+      xyz="-0.254 0.29591 0.1016"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_axle" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_right_wheel">
+    <inertial>
+      <origin
+        xyz="2.4980018054066E-15 4.44089209850063E-16 0.00381000000000153"
+        rpy="0 0 0" />
+      <mass
+        value="0.821190144658104" />
+      <inertia
+        ixx="0.00363823051227157"
+        ixy="6.29693475842048E-19"
+        ixz="3.88279903021371E-18"
+        iyy="0.00363823051227157"
+        iyz="6.00057745133937E-19"
+        izz="0.00661153859928151" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/rear_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/rear_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BR_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.59182"
+      rpy="0 0 0" />
+    <parent
+      link="rear_axle" />
+    <child
+      link="rear_right_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rear_left_wheel">
+    <inertial>
+      <origin
+        xyz="0 0 -0.00381000000000031"
+        rpy="0 0 0" />
+      <mass
+        value="0.821190144658107" />
+      <inertia
+        ixx="0.00363823051227159"
+        ixy="-9.14842761672796E-19"
+        ixz="-6.7762635780344E-20"
+        iyy="0.00363823051227159"
+        iyz="2.58241516646231E-19"
+        izz="0.00661153859928153" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/rear_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/rear_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BL_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rear_axle" />
+    <child
+      link="rear_left_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="front_left_clamp">
+    <inertial>
+      <origin
+        xyz="0.0215281779215679 0.00042175756438767 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.641956706482968" />
+      <inertia
+        ixx="0.00135278722730519"
+        ixy="5.35433396448289E-06"
+        ixz="6.62362914544401E-21"
+        iyy="0.00112506642003246"
+        iyz="5.74411426572431E-20"
+        izz="0.00100866529819892" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/front_left_clamp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/front_left_clamp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_clamp_joint"
+    type="fixed">
+    <origin
+      xyz="0.25408 0.22109 0.1016"
+      rpy="0 0 -1.5943" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_left_clamp" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_left_axle">
+    <inertial>
+      <origin
+        xyz="-0.0244949192475701 -0.00235648570810332 -6.42436837061666E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0396239878178855" />
+      <inertia
+        ixx="6.40965190915279E-06"
+        ixy="-2.42058002157189E-06"
+        ixz="-7.74722210669572E-12"
+        iyy="3.13367607740496E-05"
+        iyz="4.92179843683267E-11"
+        izz="2.74190613086472E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/front_left_axle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/front_left_axle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_steer_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="front_left_clamp" />
+    <child
+      link="front_left_axle" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="front_left_wheel">
+    <inertial>
+      <origin
+        xyz="0.000275667714972561 -1.11022302462516E-16 -0.00380001411983177"
+        rpy="0 0 0" />
+      <mass
+        value="0.821190144658104" />
+      <inertia
+        ixx="0.00365379596559511"
+        ixy="2.20995283745918E-18"
+        ixz="-0.000214566085175851"
+        iyy="0.00363823051227157"
+        iyz="-1.96057593139813E-19"
+        izz="0.00659597314595797" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/front_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/front_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.077009 -0.0074087 0"
+      rpy="-1.5708 0 1.5943" />
+    <parent
+      link="front_left_axle" />
+    <child
+      link="front_left_wheel" />
+    <axis
+      xyz="-0.072354 0 0.99738" />
+  </joint>
+  <link
+    name="front_right_clamp">
+    <inertial>
+      <origin
+        xyz="-0.0215293945463542 -0.000409753083475795 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.641956706482969" />
+      <inertia
+        ixx="0.00135278722730519"
+        ixy="5.35433396448316E-06"
+        ixz="3.65008257920842E-20"
+        iyy="0.00112506642003246"
+        iyz="4.34475241529032E-20"
+        izz="0.00100866529819893" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/front_right_clamp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/front_right_clamp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_clamp_joint"
+    type="fixed">
+    <origin
+      xyz="0.2539 -0.22109 0.1016"
+      rpy="0 0 -1.5943" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_right_clamp" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_right_axle">
+    <inertial>
+      <origin
+        xyz="0.0244696373875344 0.00260594342102161 -6.9781480593889E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0396239878815167" />
+      <inertia
+        ixx="6.46151777008954E-06"
+        ixy="-2.67383329521751E-06"
+        ixz="8.50737619624083E-12"
+        iyy="3.12848948220259E-05"
+        iyz="-4.91039396926096E-11"
+        izz="2.74190612204381E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/front_right_axle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/front_right_axle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_steer_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="front_right_clamp" />
+    <child
+      link="front_right_axle" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="front_right_wheel">
+    <inertial>
+      <origin
+        xyz="-0.000314339013796405 -9.8486774291473E-11 0.00379701073452043"
+        rpy="0 0 0" />
+      <mass
+        value="0.821190144658106" />
+      <inertia
+        ixx="0.00365846939173613"
+        ixy="-1.25714609949212E-18"
+        ixz="-0.000244472517355173"
+        iyy="0.00363823051227158"
+        iyz="5.14648760467415E-19"
+        izz="0.00659129971981698" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/front_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://assem3/meshes/front_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.076929 0.0081925 0"
+      rpy="-1.5708 0 1.5943" />
+    <parent
+      link="front_right_axle" />
+    <child
+      link="front_right_wheel" />
+    <axis
+      xyz="0.082504 0 -0.99659" />
+  </joint>
+
+  <transmission name="tr1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="BR_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="BR_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="tr2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="BL_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="BL_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="tr3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FL_steer_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="FL_steer">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="tr4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="FR_steer_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="FR_steer">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+</robot>
